@@ -1,10 +1,8 @@
 function [ Tu,count ] = AP_Gridless( Y,r,K,max_iter,tol, make_plot )
 %Mark Wagner, Dec 31 2019
-%extended Alternating Projection based gridless beamforming (e-APG) for
-%arbitrary array geometry. Given measurements Y, and number of sources K,
-%estimate DOAs. max_iter is maximum number of iterations, tolerance is a
-%break condition calling the function to end angle between subspaces of Tu
-%and the projection of its extended Vandermonde matrix is low enough.
+%extended Alternating Projection based gridless beamforming (e-APG) for arbitrary array geometry. Given measurements Y, and number of sources K,
+%estimate DOAs. max_iter is maximum number of iterations, tolerance is a break condition calling the function to end angle between subspaces of Tu
+%and the projection of its extended Vandermonde matrix is low enough. 
 
 % M = number of sensors
 % L = number of snapshots

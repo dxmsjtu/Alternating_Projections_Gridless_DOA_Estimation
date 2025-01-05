@@ -4,8 +4,6 @@ function [ peak_locs ] = find_CBF_peaks( Y, r, K, sep, tol )
 [M,L]           = size(Y);
 r               = real(r(:)).';
 Ryy             = (1/L)*(Y*Y');
-
-
 %% Evaluate CBF spectrum
 samples                 = 20*(M);
 sep_samples             = round(samples*sep);
@@ -26,7 +24,6 @@ end
 % ylabel('Magnitude')
 % grid on
 % pause(.1)
-
 %% Find approximate peaks
 [pks,inds]              = findpeaks(CBF_spectrum,(1:samples+2),'MinPeakDistance',sep_samples); %find the peaks
 if sum(ismember(inds,2)) && sum(ismember(inds,samples))
@@ -44,9 +41,5 @@ for i = 1:length(peak_locs)                                                     
     peak_locs_refined(i)= fminsearch(fun,peak_locs(i)-(abs(f(1)-f(2))/2),options);      %find local minima about generalized null spectrum
 end      
 peak_locs               = sort((peak_locs_refined)); %sorted DoAs on [-.5,.5)
-
-
-
-
 end
 
